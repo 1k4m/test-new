@@ -21,8 +21,8 @@ var posts = new Vue({
 	},
 	mounted() {
 		Promise.all([
-			fetch('http://jsonplaceholder.typicode.com/posts'),
-			fetch('http://jsonplaceholder.typicode.com/users')
+			fetch('https://jsonplaceholder.typicode.com/posts'),
+			fetch('https://jsonplaceholder.typicode.com/users')
 		])
 			.then(responses => Promise.all(responses.map(response => response.json())))
 			.then(data => {
