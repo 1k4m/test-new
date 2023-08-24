@@ -1,0 +1,91 @@
+/* Указываем понятную периодичность в потоке данных у article*/
+article>*+* {
+	margin-top: 1em;
+}
+
+@mixin article($m, $bm) {
+	&:not(.all-mb) {
+		&>*:not(:last-child):not(.mb0):not(.dashboard-sidebar-popup) {
+			margin-bottom: $m;
+
+			&.bm {
+				margin-bottom: $bm;
+			}
+
+			&.bordered:not(.btn) {
+				border-bottom: 1px solid var(--border);
+				padding-bottom: $m;
+
+				&.bm {
+					padding-bottom: $bm;
+				}
+
+				&.small-pb {
+					padding-bottom: calc(#{$m} / 2);
+				}
+			}
+
+			&.mt {
+				margin-top: auto;
+			}
+		}
+	}
+
+	&.all-mb {
+		&>*:not(.mb0) {
+			margin-bottom: $m;
+
+			&.bm {
+				margin-bottom: $bm;
+			}
+
+			&.bordered {
+				border-bottom: 1px solid var(--border);
+				padding-bottom: $m;
+
+				&.bm {
+					padding-bottom: $bm;
+				}
+			}
+		}
+	}
+
+	&.half {
+		width: var(--article-half);
+	}
+
+	&.center {
+		width: var(--article-half);
+		margin-left: auto;
+		margin-right: auto;
+		text-align: center;
+	}
+}
+
+.article {
+	@include article(2rem, 3rem);
+
+	&-mc {
+		@include article(0.3rem, 0.6rem);
+	}
+
+	&-sm {
+		@include article(1rem, 2rem);
+	}
+
+	&-nm {
+		@include article(1.5rem, 2.5rem);
+	}
+
+	&-md {
+		@include article(3rem, 4rem);
+	}
+
+	&-bg {
+		@include article(4rem, 5rem);
+	}
+
+	&-lg {
+		@include article(6rem, 7rem);
+	}
+}

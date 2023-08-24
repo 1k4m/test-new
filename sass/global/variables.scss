@@ -1,0 +1,26 @@
+$blue: rgb(82 136 237);
+$grey: rgba(161, 167, 181, 1);
+$grey-light: #ccc;
+$black: rgba(34, 35, 39, 1);
+$blue-light: rgba(240, 246, 254, 1);
+$white: #fff;
+
+
+
+:root {
+    --blue: #{$blue};
+
+    --grey: #{$grey};
+    --grey-light: #{$grey-light};
+    --black: #{$black};
+    --blue-light: #{$blue-light};
+    --white: #{$white};
+
+    --padding: 8rem;
+    --padding-preview: 4rem;
+
+    // Размеры шрифтов
+    --fz: 1.5rem;
+   
+
+}

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test</title>
+    <link rel="stylesheet" href="css/style.css?v1.2">
+</head>
+
+<body>
+
+    <main class="main">
+
+        <section class="posts" id="posts" v-cloak>
+            <div class="container">
+                <div class="posts__wrapper article-bg">
+
+                    <div class="posts__search search">
+
+                        <img class="search__icon" src="img/svg/search.svg" />
+                        <input class="search__input" type="text" placeholder="Filter by author..." id="author" v-model="searchAuthor">
+
+                    </div>
+
+                    <div class="posts__item-wrapper">
+                        <a class="posts__item" href="#" v-for="post in filteredPosts" :key="post.id">
+
+                            <div class="posts__content">
+
+                                <div class="posts__about article">
+
+                                    <div class="posts__name" >{{ post.title }}</div>
+
+                                    <div class="posts__preview">{{ post.body }}</div>
+
+                                </div>
+
+                                <div class="posts__author">{{ post.author.name }}</div>
+                               
+                            </div>
+
+                        </a>
+                    </div>
+
+                    <!-- <button class="news__btn" v-if="hasMorePages()" @click="loadNextPage">Загрузить ещё</button> -->
+
+                </div>
+            </div>
+
+        </section>
+
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <script src="./js/posts.js"></script>
+
+</body>
+
+</html>
